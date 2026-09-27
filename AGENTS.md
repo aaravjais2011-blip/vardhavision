@@ -11,5 +11,5 @@
 
 ## Project architecture
 
-- Keep the Vardha Vision experience as one anchored page until the client requests separate URLs, preserving the intended cinematic journey and simple batch-media expansion.
+- Keep Vardha Vision as one anchored page with separate project "worlds" (Crown Town green, Sainik Vihar black/gold) until the client explicitly asks for separate URLs; keeps the cinematic gate-to-contact journey intact.
 - Store supplied binary media as Lovable Assets pointer files so the repository stays lightweight while original media quality is retained.

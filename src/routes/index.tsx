@@ -20,6 +20,15 @@ import crownResidences from "@/assets/crown-town-residences.jpeg.asset.json";
 import sainikEntrance from "@/assets/sainik-vihar-entrance.jpeg.asset.json";
 import sainikVideo from "@/assets/sainik-vihar-showcase.mp4.asset.json";
 import ownerPhoto from "@/assets/tej-bahadur-singh.jpeg.asset.json";
+import vardhaLogo from "@/assets/vardha-vision-logo.jpeg.asset.json";
+import crownLogo from "@/assets/crown-town-logo.png.asset.json";
+import sainikLogo from "@/assets/sainik-vihar-logo.jpeg.asset.json";
+import sainikMap from "@/assets/sainik-vihar-map.jpg.asset.json";
+import sainikMapPdf from "@/assets/sainik-vihar-map.pdf.asset.json";
+import sainikSite11 from "@/assets/sainik-vihar-site-11.jpeg.asset.json";
+import sainikSite12 from "@/assets/sainik-vihar-site-12.jpeg.asset.json";
+import sainikSite13 from "@/assets/sainik-vihar-site-13.jpeg.asset.json";
+import sainikSite14 from "@/assets/sainik-vihar-site-14.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,10 +52,7 @@ const navigation = [
 function BrandMark() {
   return (
     <a href="#home" className="group flex items-center gap-3" aria-label="Vardha Vision home">
-      <span className="grid size-9 place-items-center border border-primary/50 font-display text-lg text-primary">V</span>
-      <span className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-foreground">
-        Vardha <span className="text-primary">Vision</span>
-      </span>
+      <img src={vardhaLogo.url} alt="Varadavision Infrabuilt Pvt. Ltd. logo" className="h-12 w-auto border border-primary/40 object-contain" />
     </a>
   );
 }
@@ -91,7 +97,7 @@ function Index() {
           <div className="absolute bottom-0 left-1/2 h-1/3 w-px bg-primary/30" />
           <div className="relative animate-fade-in">
             <p className="eyebrow mb-5 text-primary">An architectural journey</p>
-            <p className="font-display text-5xl sm:text-7xl">Vardha Vision</p>
+            <img src={vardhaLogo.url} alt="Varadavision Infrabuilt Pvt. Ltd. logo" className="mx-auto w-full max-w-sm border border-primary/40 object-contain" />
             <Button variant="goldOutline" size="luxe" className="mt-10" onClick={() => setIntroVisible(false)}>
               Enter website <ArrowRight />
             </Button>
@@ -171,6 +177,7 @@ function Index() {
 
       <section id="crown-town" className="bg-crown text-crown-foreground">
         <div className="page-shell section-pad">
+          <img src={crownLogo.url} alt="Crown Town logo" className="mb-12 h-28 w-auto object-contain sm:h-36" />
           <SectionHeading eyebrow="Crown Town · The arrival" title="A welcoming entrance to a greener way of living." light />
         </div>
         <GalleryImage src={crownEntrance.url} alt="Crown Town entrance gate" className="aspect-[16/8] w-full" />
@@ -201,6 +208,7 @@ function Index() {
 
       <section id="sainik-vihar" className="bg-ink text-ink-foreground">
         <div className="page-shell section-pad">
+          <img src={sainikLogo.url} alt="Sainik Vihar logo" className="mb-12 h-32 w-auto border border-primary/40 object-contain sm:h-40" />
           <div className="grid items-end gap-10 lg:grid-cols-2">
             <SectionHeading eyebrow="Sainik Vihar" title="A plotted development shaped around community." light />
             <p className="max-w-lg justify-self-end text-sm leading-7 text-ink-muted">Plots of different sizes are available, with a temple, garden, and play area forming part of the community environment.</p>
@@ -221,11 +229,25 @@ function Index() {
           </div>
         </div>
 
-        <div id="location" className="page-shell section-pad">
-          <p className="eyebrow text-primary">Sainik Vihar · Location</p>
-          <div className="mt-4 grid min-h-72 place-items-center border border-dashed border-primary/35 bg-ink-soft px-6 text-center">
-            <div><p className="font-display text-3xl">Location map awaiting supplied media</p><p className="mt-3 text-sm text-ink-muted">The verified map and Google Maps destination will appear here.</p></div>
+        <div className="page-shell section-pad pb-0">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4"><SectionHeading eyebrow="Sainik Vihar · On site" title="The ground taking shape." light /><span className="text-xs uppercase tracking-[0.16em] text-ink-muted">Select an image to expand</span></div>
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+            <GalleryImage src={sainikSite11.url} alt="Sainik Vihar internal road with plots on both sides" className="aspect-[3/4]" />
+            <GalleryImage src={sainikSite14.url} alt="Sainik Vihar boundary wall with project name" className="aspect-[3/4]" />
+            <GalleryImage src={sainikSite13.url} alt="Sainik Vihar demarcated plot with sapling" className="aspect-[3/4]" />
+            <GalleryImage src={sainikSite12.url} alt="Sainik Vihar plots marked out across the site" className="aspect-[3/4]" />
           </div>
+        </div>
+
+        <div id="location" className="page-shell section-pad">
+          <div className="mb-10 grid items-end gap-6 lg:grid-cols-2">
+            <SectionHeading eyebrow="Sainik Vihar · Location" title="Site layout & location" light />
+            <div className="lg:justify-self-end">
+              <p className="text-sm leading-7 text-ink-muted">Kisan Path, Faizabad Road, Lucknow · Behind Tata Telco</p>
+              <Button asChild variant="goldOutline" size="luxe" className="mt-4"><a href={sainikMapPdf.url} target="_blank" rel="noreferrer">Open full map (PDF) <ArrowRight /></a></Button>
+            </div>
+          </div>
+          <GalleryImage src={sainikMap.url} alt="Sainik Vihar site layout map" className="aspect-[1140/780] w-full bg-ink-soft" />
         </div>
       </section>
 

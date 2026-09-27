@@ -5,5 +5,6 @@
 - [x] Add mobile navigation and project gallery lightboxes
 - [x] Add page metadata and record architecture decisions
 - [x] Verify desktop and mobile presentation and interactions
-- [ ] Add corrected Vardha Vision gate and Sainik Vihar map when uploaded (blocked: pending user files)
-- [ ] Add second-batch project images and official logos (blocked: pending user files)
+- [x] Add Sainik Vihar map
+- [ ] Add Vardha Vision opening-gate image (blocked: not yet uploaded)
+- [x] Add second-batch Sainik Vihar images and official logos

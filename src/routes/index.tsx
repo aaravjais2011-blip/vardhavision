@@ -119,7 +119,7 @@ function Gate({ onDone }: { onDone: () => void }) {
 function ContactButtons({ compact = false }: { compact?: boolean }) {
   const size = compact ? "sm" : "luxe";
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="grid grid-cols-1 gap-3 sm:flex sm:flex-wrap [&>a]:justify-center sm:[&>a]:justify-start">
       {PHONES.map((p) => <Button key={p} asChild variant="gold" size={size}><a href={`tel:+91${p}`}><Phone /> Call {p}</a></Button>)}
       <Button asChild variant="goldOutline" size={size}><a href={`mailto:${EMAIL}`}><Mail /> Email us</a></Button>
       <Button asChild variant="goldOutline" size={size}><a href={MAPS_URL} target="_blank" rel="noreferrer"><MapPin /> View on Google Maps</a></Button>

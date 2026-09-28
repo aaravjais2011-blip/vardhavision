@@ -95,7 +95,7 @@ function Gate({ onDone }: { onDone: () => void }) {
     if (open) return;
     setOpen(true);
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.setTimeout(onDone, reduce ? 50 : 1700);
+    window.setTimeout(onDone, reduce ? 50 : 2300);
   };
   return (
     <div className={`fixed inset-0 z-[100] overflow-hidden bg-ink [perspective:1800px] ${open ? "gate-open pointer-events-none" : "cursor-pointer"}`} onClick={enter} role="dialog" aria-label="Vardha Vision entrance">

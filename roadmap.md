@@ -6,5 +6,5 @@
 - [x] Add page metadata and record architecture decisions
 - [x] Verify desktop and mobile presentation and interactions
 - [x] Add Sainik Vihar map
-- [ ] Add Vardha Vision opening-gate image (blocked: not yet uploaded)
+- [x] Add opening-gate photo with split-panel opening animation
 - [x] Add second-batch Sainik Vihar images and official logos

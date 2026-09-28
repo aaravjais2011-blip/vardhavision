@@ -23,6 +23,7 @@ import sainikSite11 from "@/assets/sainik-vihar-site-11.jpeg.asset.json";
 import sainikSite12 from "@/assets/sainik-vihar-site-12.jpeg.asset.json";
 import sainikSite13 from "@/assets/sainik-vihar-site-13.jpeg.asset.json";
 import sainikSite14 from "@/assets/sainik-vihar-site-14.jpeg.asset.json";
+import openingGate from "@/assets/opening-gate.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -94,19 +95,21 @@ function Gate({ onDone }: { onDone: () => void }) {
     if (open) return;
     setOpen(true);
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.setTimeout(onDone, reduce ? 50 : 1700);
+    window.setTimeout(onDone, reduce ? 50 : 2300);
   };
   return (
-    <div className={`fixed inset-0 z-[100] flex bg-ink ${open ? "gate-open pointer-events-none" : "cursor-pointer"}`} onClick={enter} role="dialog" aria-label="Vardha Vision entrance">
-      <div className="gate-door gate-left gate-bars relative h-full w-1/2 origin-left border-r border-primary/60" />
-      <div className="gate-door gate-right gate-bars relative h-full w-1/2 origin-right border-l border-primary/60" />
-      <div className="gate-center gate-door absolute inset-0 grid place-items-center px-6 text-center">
+    <div className={`fixed inset-0 z-[100] overflow-hidden bg-ink [perspective:1800px] ${open ? "gate-open pointer-events-none" : "cursor-pointer"}`} onClick={enter} role="dialog" aria-label="Vardha Vision entrance">
+      <div className="gate-door gate-photo gate-left absolute inset-0 origin-left" style={{ backgroundImage: `url(${openingGate.url})`, clipPath: "inset(0 50% 0 0)" }} />
+      <div className="gate-door gate-photo gate-right absolute inset-0 origin-right" style={{ backgroundImage: `url(${openingGate.url})`, clipPath: "inset(0 0 0 50%)" }} />
+      <div className="gate-seam pointer-events-none absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-primary/70" />
+      <div className="gate-center gate-door pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-ink/40" />
+      <div className="gate-center gate-door absolute inset-x-0 bottom-0 flex flex-col items-center px-6 pb-[max(2.5rem,env(safe-area-inset-bottom))] text-center">
         <div className="animate-fade-in">
-          <img src={vardhaLogo.url} alt="Varadavision Infrabuilt Pvt. Ltd." className="mx-auto w-[min(78vw,22rem)] border border-primary/60 depth-shadow" />
-          <Button variant="gold" size="luxe" className="mt-10" onClick={(e) => { e.stopPropagation(); enter(); }} autoFocus>
-            Enter <ArrowRight />
+          <img src={vardhaLogo.url} alt="Varadavision Infrabuilt Pvt. Ltd." className="mx-auto w-[min(60vw,14rem)] border border-primary/60 depth-shadow" />
+          <Button variant="gold" size="luxe" className="mt-6" onClick={(e) => { e.stopPropagation(); enter(); }} autoFocus>
+            Open gate <ArrowRight />
           </Button>
-          <p className="mt-4 text-[0.6rem] uppercase tracking-[0.3em] text-ink-muted">Tap the gate to open</p>
+          <p className="mt-3 text-[0.65rem] uppercase tracking-[0.3em] text-ink-foreground/80">Tap to enter</p>
         </div>
       </div>
     </div>

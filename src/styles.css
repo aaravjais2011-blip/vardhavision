@@ -200,11 +200,16 @@
 @utility dim-text { text-shadow: 0 1px 0 color-mix(in oklab, var(--primary) 35%, transparent), 0 1.25rem 2.5rem oklch(0 0 0 / 45%); }
 @utility reveal { opacity: 0; transform: perspective(1200px) translateY(2.5rem) rotateX(8deg); transition: opacity 900ms cubic-bezier(.2,.7,.2,1), transform 900ms cubic-bezier(.2,.7,.2,1); &[data-shown="true"] { opacity: 1; transform: none; } }
 @utility tilt { transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 300ms ease-out; transform-style: preserve-3d; }
-.gate-door { transition: transform 1500ms cubic-bezier(.65,.05,.25,1), filter 1500ms ease; }
-.gate-open .gate-left { transform: perspective(1600px) rotateY(-100deg); filter: brightness(.5); }
-.gate-open .gate-right { transform: perspective(1600px) rotateY(100deg); filter: brightness(.5); }
-.gate-open .gate-center { opacity: 0; transform: scale(1.15); }
-.gate-open { background-color: transparent !important; transition: background-color 1500ms ease; }
+.gate-photo { background-size: cover; background-position: center; box-shadow: 0 0 6rem oklch(0 0 0 / 60%); animation: gate-breathe 9s ease-in-out infinite alternate; }
+@keyframes gate-breathe { from { transform: scale(1.04); } to { transform: scale(1.0); } }
+.gate-door { transition: transform 1900ms cubic-bezier(.7,.02,.2,1) 250ms, filter 1900ms ease 250ms, opacity 900ms ease; }
+.gate-seam { transition: opacity 400ms ease, box-shadow 400ms ease; opacity: 0; }
+.gate-open .gate-seam { opacity: 1; box-shadow: 0 0 2rem 0.4rem color-mix(in oklab, var(--primary) 70%, transparent); transition: opacity 250ms ease, box-shadow 250ms ease; }
+.gate-open .gate-photo { animation: none; }
+.gate-open .gate-left { transform: translateX(-55%) rotateY(-38deg) scale(1.06); filter: brightness(.45); }
+.gate-open .gate-right { transform: translateX(55%) rotateY(38deg) scale(1.06); filter: brightness(.45); }
+.gate-open .gate-center { opacity: 0; }
+.gate-open { background-color: transparent !important; transition: background-color 1600ms ease 400ms; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }

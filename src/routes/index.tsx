@@ -125,12 +125,12 @@ function AutoVideo() {
     const io = new IntersectionObserver(([e]) => {
       if (!e) return;
       if (e.isIntersecting) {
-        v.muted = v.muted || !v.dataset.userUnmuted;
+        v.muted = v.muted || !v.dataset["userUnmuted"];
         v.play().then(() => setBlocked(false)).catch(() => setBlocked(true));
       } else if (!v.paused) v.pause();
     }, { threshold: 0.4 });
     io.observe(v);
-    const onVol = () => { if (!v.muted) v.dataset.userUnmuted = "1"; };
+    const onVol = () => { if (!v.muted) v.dataset["userUnmuted"] = "1"; };
     v.addEventListener("volumechange", onVol);
     return () => { io.disconnect(); v.removeEventListener("volumechange", onVol); };
   }, []);

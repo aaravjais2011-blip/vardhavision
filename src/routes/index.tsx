@@ -116,6 +116,50 @@ function Gate({ onDone }: { onDone: () => void }) {
   );
 }
 
+function AutoVideo() {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [blocked, setBlocked] = useState(false);
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    const io = new IntersectionObserver(([e]) => {
+      if (!e) return;
+      if (e.isIntersecting) {
+        v.muted = v.muted || !v.dataset.userUnmuted;
+        v.play().then(() => setBlocked(false)).catch(() => setBlocked(true));
+      } else if (!v.paused) v.pause();
+    }, { threshold: 0.4 });
+    io.observe(v);
+    const onVol = () => { if (!v.muted) v.dataset.userUnmuted = "1"; };
+    v.addEventListener("volumechange", onVol);
+    return () => { io.disconnect(); v.removeEventListener("volumechange", onVol); };
+  }, []);
+  const play = () => { ref.current?.play().then(() => setBlocked(false)).catch(() => setBlocked(true)); };
+  return (
+    <div className="relative">
+      <video ref={ref} src={sainikVideo.url} poster={sainikEntrance.url} controls muted loop playsInline preload="metadata" className="aspect-[848/478] w-full bg-video object-contain" aria-label="Sainik Vihar project showcase video" />
+      {blocked && (
+        <button type="button" onClick={play} className="absolute inset-0 grid place-items-center bg-ink/55 transition hover:bg-ink/40">
+          <span className="inline-flex items-center gap-3 border border-primary bg-ink/80 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary backdrop-blur-sm">▶ Play video</span>
+        </button>
+      )}
+    </div>
+  );
+}
+
+function useActiveSection() {
+  const [active, setActive] = useState("home");
+  useEffect(() => {
+    const els = navigation.map(([, id]) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+  return active;
+}
+
 function ContactButtons({ compact = false }: { compact?: boolean }) {
   const size = compact ? "sm" : "luxe";
   return (
@@ -130,6 +174,7 @@ function ContactButtons({ compact = false }: { compact?: boolean }) {
 
 function Index() {
   const [gate, setGate] = useState(true);
+  const active = useActiveSection();
 
   useEffect(() => {
     const onScroll = () => document.documentElement.style.setProperty("--scroll", String(window.scrollY));
@@ -146,7 +191,7 @@ function Index() {
         <div className="mx-auto flex h-20 max-w-[92rem] items-center justify-between px-5 sm:px-8 lg:px-12">
           <a href="#home" aria-label="Vardha Vision home"><img src={vardhaLogo.url} alt="Varadavision Infrabuilt Pvt. Ltd. logo" className="h-12 w-auto border border-primary/40" /></a>
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
-            {navigation.map(([label, id]) => <a key={id} href={`#${id}`} className="nav-link">{label}</a>)}
+            {navigation.map(([label, id]) => <a key={id} href={`#${id}`} data-active={active === id} aria-current={active === id ? "true" : undefined} className="nav-link">{label}</a>)}
             <Button asChild variant="gold" size="sm"><a href={`tel:+91${PHONES[0]}`}><Phone /> {PHONES[0]}</a></Button>
           </nav>
           <Sheet>
@@ -285,7 +330,7 @@ function Index() {
             <p className="max-w-md text-sm leading-7 text-ink-muted lg:justify-self-end">Plots of different sizes, with a temple, garden and play area forming part of the community.</p>
           </Reveal>
           <Reveal><div className="border border-primary/30 p-2 depth-shadow sm:p-3">
-            <video src={sainikVideo.url} controls preload="metadata" playsInline className="aspect-[848/478] w-full bg-video object-contain" aria-label="Sainik Vihar project showcase video" />
+            <AutoVideo />
           </div></Reveal>
         </div>
 

@@ -200,17 +200,17 @@
 @utility dim-text { text-shadow: 0 1px 0 color-mix(in oklab, var(--primary) 35%, transparent), 0 1.25rem 2.5rem oklch(0 0 0 / 45%); }
 @utility reveal { opacity: 0; transform: perspective(1200px) translateY(2.5rem) rotateX(8deg); transition: opacity 900ms cubic-bezier(.2,.7,.2,1), transform 900ms cubic-bezier(.2,.7,.2,1); &[data-shown="true"] { opacity: 1; transform: none; } }
 @utility tilt { transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 300ms ease-out; transform-style: preserve-3d; }
-.gate-photo { background-size: cover; background-position: center; box-shadow: 0 0 6rem oklch(0 0 0 / 60%); animation: gate-breathe 9s ease-in-out infinite alternate; }
+.gate-photo { background-size: cover; background-position: center;  }
 @keyframes gate-breathe { from { transform: scale(1.04); } to { transform: scale(1.0); } }
-.gate-door { will-change: transform; backface-visibility: hidden; transition: transform 2100ms cubic-bezier(.65,.02,.18,1) 300ms, filter 2100ms ease 300ms, opacity 700ms ease; }
+.gate-door { will-change: transform; backface-visibility: hidden; transition: transform 2200ms cubic-bezier(.6,.05,.2,1) 250ms, filter 2100ms ease 300ms, opacity 700ms ease; }
 .gate-left { box-shadow: inset -2rem 0 3rem -2rem oklch(0 0 0 / 0%); }
 .gate-right { box-shadow: inset 2rem 0 3rem -2rem oklch(0 0 0 / 0%); }
 .gate-seam { transition: opacity 400ms ease, box-shadow 400ms ease; opacity: 0; }
 .gate-open .gate-seam { opacity: 1; box-shadow: 0 0 1.5rem 0.25rem color-mix(in oklab, var(--primary) 55%, transparent); transition: opacity 250ms ease, box-shadow 250ms ease; animation: seam-fade 600ms ease 900ms forwards; }
 @keyframes seam-fade { to { opacity: 0; } }
 .gate-open .gate-photo { animation: none; }
-.gate-open .gate-left { transform: translateX(-58%) rotateY(-42deg) scale(1.04); filter: brightness(.4) drop-shadow(1.5rem 0 2.5rem oklch(0 0 0 / 70%)); }
-.gate-open .gate-right { transform: translateX(58%) rotateY(42deg) scale(1.04); filter: brightness(.4) drop-shadow(-1.5rem 0 2.5rem oklch(0 0 0 / 70%)); }
+.gate-open .gate-left { transform: translateX(-52%) rotateY(14deg); filter: brightness(.55) drop-shadow(1.5rem 0 2.5rem oklch(0 0 0 / 70%)); }
+.gate-open .gate-right { transform: translateX(52%) rotateY(-14deg); filter: brightness(.55) drop-shadow(-1.5rem 0 2.5rem oklch(0 0 0 / 70%)); }
 .gate-open .gate-center { opacity: 0; }
 .gate-open { background-color: transparent !important; transition: background-color 1700ms ease 500ms; }
 .nav-link[data-active="true"] { opacity: 1; color: var(--primary); }

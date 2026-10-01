@@ -5,32 +5,32 @@ import { useEffect, useRef, useState, type ReactNode, type PointerEvent } from "
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import bankVarada from "@/assets/bank-varadavision.jpeg.asset.json";
-import bankRoyal from "@/assets/bank-royalbhoomi.jpeg.asset.json";
-import crownEntrance from "@/assets/crown-town-entrance.jpeg.asset.json";
-import crownPlay from "@/assets/crown-town-play-area.jpeg.asset.json";
-import crownPool from "@/assets/crown-town-pool.jpeg.asset.json";
-import crownResidences from "@/assets/crown-town-residences.jpeg.asset.json";
-import sainikEntrance from "@/assets/sainik-vihar-entrance.jpeg.asset.json";
-import sainikVideo from "@/assets/sainik-vihar-showcase.mp4.asset.json";
-import ownerPhoto from "@/assets/tej-bahadur-singh.jpeg.asset.json";
-import vardhaLogo from "@/assets/vardha-vision-logo.jpeg.asset.json";
-import crownLogo from "@/assets/crown-town-logo.png.asset.json";
-import sainikLogo from "@/assets/sainik-vihar-logo.jpeg.asset.json";
-import sainikMap from "@/assets/sainik-vihar-map.jpg.asset.json";
-import sainikMapPdf from "@/assets/sainik-vihar-map.pdf.asset.json";
-import sainikSite11 from "@/assets/sainik-vihar-site-11.jpeg.asset.json";
-import sainikSite12 from "@/assets/sainik-vihar-site-12.jpeg.asset.json";
-import sainikSite13 from "@/assets/sainik-vihar-site-13.jpeg.asset.json";
-import sainikSite14 from "@/assets/sainik-vihar-site-14.jpeg.asset.json";
-import openingGate from "@/assets/opening-gate.png.asset.json";
+const bankVarada = { url: "/media/bank-varadavision.jpeg" };
+const bankRoyal = { url: "/media/bank-royalbhoomi.jpeg" };
+const crownEntrance = { url: "/media/crown-town-entrance.jpeg" };
+const crownPlay = { url: "/media/crown-town-play-area.jpeg" };
+const crownPool = { url: "/media/crown-town-pool.jpeg" };
+const crownResidences = { url: "/media/crown-town-residences.jpeg" };
+const sainikEntrance = { url: "/media/sainik-vihar-entrance.jpeg" };
+const sainikVideo = { url: "/media/sainik-vihar-showcase.mp4" };
+const ownerPhoto = { url: "/media/tej-bahadur-singh.jpeg" };
+const vardhaLogo = { url: "/media/vardha-vision-logo.jpeg" };
+const crownLogo = { url: "/media/crown-town-logo.png" };
+const sainikLogo = { url: "/media/sainik-vihar-logo.jpeg" };
+const sainikMap = { url: "/media/sainik-vihar-map.jpg" };
+const sainikMapPdf = { url: "/media/sainik-vihar-map.pdf" };
+const sainikSite11 = { url: "/media/sainik-vihar-site-11.jpeg" };
+const sainikSite12 = { url: "/media/sainik-vihar-site-12.jpeg" };
+const sainikSite13 = { url: "/media/sainik-vihar-site-13.jpeg" };
+const sainikSite14 = { url: "/media/sainik-vihar-site-14.jpeg" };
+const openingGate = { url: "/media/opening-gate.png" };
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vardha Vision | Building Spaces. Creating Visions." },
+      { title: "Vardha Vision" },
       { name: "description", content: "Vardha Vision presents Crown Town residences and Sainik Vihar plotted development, Faizabad Road, Lucknow." },
-      { property: "og:title", content: "Vardha Vision | Building Spaces. Creating Visions." },
+      { property: "og:title", content: "Vardha Vision" },
       { property: "og:description", content: "Discover Crown Town 2 & 3 BHK houses and Sainik Vihar plots by Vardha Vision." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

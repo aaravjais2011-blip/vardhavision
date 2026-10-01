@@ -14,7 +14,7 @@ const crownResidences = { url: "/media/crown-town-residences.jpeg" };
 const sainikEntrance = { url: "/media/sainik-vihar-entrance.jpeg" };
 const sainikVideo = { url: "/media/sainik-vihar-showcase.mp4" };
 const ownerPhoto = { url: "/media/tej-bahadur-singh.jpeg" };
-const vardhaLogo = { url: "/media/vardha-vision-logo.jpeg" };
+const varadaLogo = { url: "/media/varada-vision-logo.jpeg" };
 const crownLogo = { url: "/media/crown-town-logo.png" };
 const sainikLogo = { url: "/media/sainik-vihar-logo.jpeg" };
 const sainikMap = { url: "/media/sainik-vihar-map.jpg" };
@@ -223,7 +223,7 @@ function Index() {
         </div>
         <div className="relative mx-auto w-full max-w-[92rem]">
           <p className="eyebrow mb-8 text-primary animate-fade-in">Vision · Trust · Architecture</p>
-          <h1 className="dim-text font-display text-[clamp(3.5rem,11vw,10rem)] font-medium leading-[0.9] tracking-[-0.02em] animate-fade-in">VARDHA<br /><span className="italic text-primary">Vision</span></h1>
+          <h1 className="dim-text font-display text-[clamp(3.5rem,11vw,10rem)] font-medium leading-[0.9] tracking-[-0.02em] animate-fade-in">VARADA<br /><span className="italic text-primary">Vision</span></h1>
           <p className="mt-8 max-w-md text-lg font-light text-ink-muted">Building Spaces. Creating Visions.</p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button asChild variant="gold" size="luxe"><a href="#projects">Explore projects <ArrowRight /></a></Button>

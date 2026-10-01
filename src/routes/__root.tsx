@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { lazy, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -34,12 +34,13 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
+  const err = error instanceof Error ? error : new Error(String(error));
+  console.error(err);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
+    reportLovableError(err, { boundary: "tanstack_root_error_component" });
+  }, [err]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -72,16 +73,19 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const LazyErrorComponent = lazy(() => Promise.resolve({ default: ErrorComponent }));
+
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vardha Vision" },
-      { name: "description", content: "Vardha Vision real-estate developments." },
-      { name: "author", content: "Vardha Vision" },
-      { property: "og:title", content: "Vardha Vision" },
-      { property: "og:description", content: "Vardha Vision real-estate developments." },
+      { title: "Varada Vision" },
+      { name: "description", content: "Varada Vision real-estate developments." },
+      { name: "author", content: "Varada Vision" },
+      { property: "og:title", content: "Varada Vision" },
+      { property: "og:description", content: "Varada Vision real-estate developments." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -96,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
-  errorComponent: ErrorComponent,
+  errorComponent: LazyErrorComponent,
 });
 
 function RootShell({ children }: { children: ReactNode }) {

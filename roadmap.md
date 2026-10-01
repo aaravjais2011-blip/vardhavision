@@ -1,6 +1,6 @@
 # Roadmap
 
-- [x] Build responsive Vardha Vision single-page experience
+- [x] Build responsive Varada Vision single-page experience
 - [x] Place all confirmed first-batch media in assigned sections
 - [x] Add mobile navigation and project gallery lightboxes
 - [x] Add page metadata and record architecture decisions

@@ -28,10 +28,10 @@ const openingGate = { url: "/media/opening-gate.png" };
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vardha Vision" },
-      { name: "description", content: "Vardha Vision presents Crown Town residences and Sainik Vihar plotted development, Faizabad Road, Lucknow." },
-      { property: "og:title", content: "Vardha Vision" },
-      { property: "og:description", content: "Discover Crown Town 2 & 3 BHK houses and Sainik Vihar plots by Vardha Vision." },
+      { title: "Varada Vision" },
+      { name: "description", content: "Varada Vision presents Crown Town residences and Sainik Vihar plotted development, Faizabad Road, Lucknow." },
+      { property: "og:title", content: "Varada Vision" },
+      { property: "og:description", content: "Discover Crown Town 2 & 3 BHK houses and Sainik Vihar plots by Varada Vision." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -98,7 +98,7 @@ function Gate({ onDone }: { onDone: () => void }) {
     window.setTimeout(onDone, reduce ? 50 : 2300);
   };
   return (
-    <div className={`fixed inset-0 z-[100] overflow-hidden bg-ink [perspective:1800px] ${open ? "gate-open pointer-events-none" : "cursor-pointer"}`} onClick={enter} role="dialog" aria-label="Vardha Vision entrance">
+    <div className={`fixed inset-0 z-[100] overflow-hidden bg-ink [perspective:1800px] ${open ? "gate-open pointer-events-none" : "cursor-pointer"}`} onClick={enter} role="dialog" aria-label="Varada Vision entrance">
       <div className="gate-door gate-photo gate-left absolute inset-0 origin-left" style={{ backgroundImage: `url(${openingGate.url})`, clipPath: "inset(0 50% 0 0)" }} />
       <div className="gate-door gate-photo gate-right absolute inset-0 origin-right" style={{ backgroundImage: `url(${openingGate.url})`, clipPath: "inset(0 0 0 50%)" }} />
       <div className="gate-seam pointer-events-none absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-primary/70" />
@@ -189,7 +189,7 @@ function Index() {
 
       <header className="fixed inset-x-0 top-0 z-40 border-b border-nav-border bg-nav/85 text-nav-foreground backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-[92rem] items-center justify-between px-5 sm:px-8 lg:px-12">
-          <a href="#home" aria-label="Vardha Vision home"><img src={vardhaLogo.url} alt="Varadavision Infrabuilt Pvt. Ltd. logo" className="h-12 w-auto border border-primary/40" /></a>
+          <a href="#home" aria-label="Varada Vision home"><img src={vardhaLogo.url} alt="Varadavision Infrabuilt Pvt. Ltd. logo" className="h-12 w-auto border border-primary/40" /></a>
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
             {navigation.map(([label, id]) => <a key={id} href={`#${id}`} data-active={active === id} aria-current={active === id ? "true" : undefined} className="nav-link">{label}</a>)}
             <Button asChild variant="gold" size="sm"><a href={`tel:+91${PHONES[0]}`}><Phone /> {PHONES[0]}</a></Button>
@@ -197,7 +197,7 @@ function Index() {
           <Sheet>
             <SheetTrigger asChild><Button variant="ghost" size="icon" className="text-nav-foreground lg:hidden" aria-label="Open menu"><Menu /></Button></SheetTrigger>
             <SheetContent className="w-full border-primary/20 bg-ink p-8 text-ink-foreground sm:max-w-md">
-              <SheetTitle className="font-display text-3xl text-ink-foreground">Vardha Vision</SheetTitle>
+              <SheetTitle className="font-display text-3xl text-ink-foreground">Varada Vision</SheetTitle>
               <nav className="mt-12 grid" aria-label="Mobile navigation">
                 {navigation.map(([label, id], i) => (
                   <SheetClose asChild key={id}>

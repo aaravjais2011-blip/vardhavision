@@ -26,7 +26,7 @@ Crown Town Club House + Play Area → Crown Town → Amenities
 
 Crown Town Entrance Gate → Crown Town → Project Introduction
 
-Vardha Vision Gate → Website Opening Animation ONLY
+Varada Vision Gate → Website Opening Animation ONLY
 
 Sainik Vihar Map → Sainik Vihar → Location
 
@@ -46,7 +46,7 @@ Sainik Vihar Image → Sainik Vihar → Appropriate section
 
 Crown Town Logo → Crown Town Branding
 
-Vardha Vision Logo → Main Website Branding
+Varada Vision Logo → Main Website Branding
 
 Sainik Vihar Logo → Sainik Vihar Branding
 
@@ -68,13 +68,13 @@ Use this quote beside the owner photo:
 
 — Tej Bahadur Singh
 
-The Vardha Vision gate is ONLY the website-opening animation.
+The Varada Vision gate is ONLY the website-opening animation.
 
 The Crown Town gate is ONLY used inside the Crown Town project.
 
 Keep Crown Town visually green-themed.
 
-Keep the main Vardha Vision and Sainik Vihar branding black, gold and white.
+Keep the main Varada Vision and Sainik Vihar branding black, gold and white.
 
 Never mix Crown Town and Sainik Vihar media.
 

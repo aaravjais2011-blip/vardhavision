@@ -12,4 +12,4 @@
 ## Project architecture
 
 - Keep Vardha Vision as one anchored page with separate project "worlds" (Crown Town green, Sainik Vihar black/gold) until the client explicitly asks for separate URLs; keeps the cinematic gate-to-contact journey intact.
-- Store supplied binary media as Lovable Assets pointer files so the repository stays lightweight while original media quality is retained.
+- Serve site media from public/media/ as plain /media/... paths (files under 10 MB); keeps photos working on any host such as Vercel, not just Lovable.

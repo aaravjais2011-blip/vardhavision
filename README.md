@@ -80,7 +80,7 @@ Never mix Crown Town and Sainik Vihar media.
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://vardhavision.lovable.app
+**Live app**: https://varadavision.lovable.app
 
 ## Build with Lovable
 

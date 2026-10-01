@@ -105,7 +105,7 @@ function Gate({ onDone }: { onDone: () => void }) {
       <div className="gate-center gate-door pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-ink/40" />
       <div className="gate-center gate-door absolute inset-x-0 bottom-0 flex flex-col items-center px-6 pb-[max(2.5rem,env(safe-area-inset-bottom))] text-center">
         <div className="animate-fade-in">
-          <img src={vardhaLogo.url} alt="Varadavision Infrabuilt Pvt. Ltd." className="mx-auto w-[min(60vw,14rem)] border border-primary/60 depth-shadow" />
+          <img src={varadaLogo.url} alt="Varadavision Infrabuilt Pvt. Ltd." className="mx-auto w-[min(60vw,14rem)] border border-primary/60 depth-shadow" />
           <Button variant="gold" size="luxe" className="mt-6" onClick={(e) => { e.stopPropagation(); enter(); }} autoFocus>
             Open gate <ArrowRight />
           </Button>
@@ -189,7 +189,7 @@ function Index() {
 
       <header className="fixed inset-x-0 top-0 z-40 border-b border-nav-border bg-nav/85 text-nav-foreground backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-[92rem] items-center justify-between px-5 sm:px-8 lg:px-12">
-          <a href="#home" aria-label="Varada Vision home"><img src={vardhaLogo.url} alt="Varadavision Infrabuilt Pvt. Ltd. logo" className="h-12 w-auto border border-primary/40" /></a>
+          <a href="#home" aria-label="Varada Vision home"><img src={varadaLogo.url} alt="Varadavision Infrabuilt Pvt. Ltd. logo" className="h-12 w-auto border border-primary/40" /></a>
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
             {navigation.map(([label, id]) => <a key={id} href={`#${id}`} data-active={active === id} aria-current={active === id ? "true" : undefined} className="nav-link">{label}</a>)}
             <Button asChild variant="gold" size="sm"><a href={`tel:+91${PHONES[0]}`}><Phone /> {PHONES[0]}</a></Button>
@@ -219,7 +219,7 @@ function Index() {
         <div className="pointer-events-none absolute right-[6%] top-[16%] hidden h-[62%] w-[30%] border border-primary/20 lg:block" style={{ transform: "perspective(1200px) rotateY(-18deg) translateY(calc(var(--scroll, 0) * -0.12px))" }} />
         <div className="pointer-events-none absolute right-[10%] top-[22%] hidden h-[62%] w-[30%] border border-primary/45 lg:block" style={{ transform: "perspective(1200px) rotateY(-18deg) translateY(calc(var(--scroll, 0) * -0.22px))" }} />
         <div className="pointer-events-none absolute right-[14%] top-[28%] hidden h-[62%] w-[30%] bg-ink-soft/80 depth-shadow lg:block" style={{ transform: "perspective(1200px) rotateY(-18deg) translateY(calc(var(--scroll, 0) * -0.32px))" }}>
-          <img src={vardhaLogo.url} alt="" className="absolute inset-x-8 top-1/2 w-[calc(100%-4rem)] -translate-y-1/2 opacity-90" />
+          <img src={varadaLogo.url} alt="" className="absolute inset-x-8 top-1/2 w-[calc(100%-4rem)] -translate-y-1/2 opacity-90" />
         </div>
         <div className="relative mx-auto w-full max-w-[92rem]">
           <p className="eyebrow mb-8 text-primary animate-fade-in">Vision · Trust · Architecture</p>
@@ -422,7 +422,7 @@ function Index() {
 
       <footer className="border-t border-ink-border bg-ink px-5 py-12 text-ink-foreground sm:px-8 lg:px-12">
         <div className="mx-auto grid max-w-[92rem] gap-10 md:grid-cols-[1fr_auto_auto]">
-          <div><img src={vardhaLogo.url} alt="Varadavision Infrabuilt Pvt. Ltd. logo" className="h-16 w-auto border border-primary/40" /><p className="mt-5 text-xs text-ink-muted">© {new Date().getFullYear()} Varadavision Infrabuilt Pvt. Ltd.</p></div>
+          <div><img src={varadaLogo.url} alt="Varadavision Infrabuilt Pvt. Ltd. logo" className="h-16 w-auto border border-primary/40" /><p className="mt-5 text-xs text-ink-muted">© {new Date().getFullYear()} Varadavision Infrabuilt Pvt. Ltd.</p></div>
           <div className="grid content-start gap-3 text-xs uppercase tracking-[0.16em] text-ink-muted">
             <a href="#crown-town" className="hover:text-primary">Crown Town</a><a href="#sainik-vihar" className="hover:text-primary">Sainik Vihar</a><a href={MAPS_URL} target="_blank" rel="noreferrer" className="hover:text-primary">Google Maps</a><a href={INSTAGRAM} target="_blank" rel="noreferrer" className="hover:text-primary">Instagram</a>
           </div>
